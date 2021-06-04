@@ -9,8 +9,15 @@ import { createHistory as history } from 'history';
 
 import '../assets/stylesheets/application.scss';
 
+const garageName = `garage${Math.floor(10 + (Math.random() * 90))}`;
+const initialState = {
+  garage: garageName,
+  cars: []
+};
+
 const reducers = combineReducers({
-  // key: reducer
+  garage: (state = null, action) => state,
+  cars: carsReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
@@ -20,7 +27,7 @@ ReactDOM.render(
   <Provider store={createStore(reducers, {}, middlewares)}>
     <Router history={history}>
       <Switch>
-        TODO
+        <Route />
       </Switch>
     </Router>
   </Provider>,
