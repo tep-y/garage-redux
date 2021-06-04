@@ -12,7 +12,7 @@ export function fetchCars(garage) {
   }
 };
 
-export function addCar(garage, car) {
+export function addCar(garage, car, callback) {
   const url = `https://wagon-garage-api.herokuapp.com/${garage}/car`;
 
   const request = fetch(url, {
@@ -20,6 +20,7 @@ export function addCar(garage, car) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(car)
     }).then(response => response.json())
+      .then(() => callback());
 
   return {
     type: ADD_CAR,
