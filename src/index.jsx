@@ -22,10 +22,11 @@ const carInfo = [
 ];
 
 const garageName = prompt("What's the name of your garage?") || `garage${Math.floor(10 + (Math.random() * 90))}`;
+ 
 
 const initialState = {
   garage: garageName,
-  cars: carInfo
+  cars: []
 };
 
 const reducers = combineReducers({

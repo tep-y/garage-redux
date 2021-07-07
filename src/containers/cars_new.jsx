@@ -14,6 +14,16 @@ class CarsNew extends Component {
     return (
       <div key="add" className="form-container" >
         <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+        <div className="form-group">
+            <label htmlFor="InputGarage">Garage</label>
+              <Field
+                name="garage"
+                type="text"
+                component="input"
+                placeholder={this.props.garage}
+                className="form-control"
+              />
+          </div>
           <div className="form-group">
             <label htmlFor="InputBrand">Brand</label>
               <Field
